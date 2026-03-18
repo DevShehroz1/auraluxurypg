@@ -809,17 +809,17 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Your email">
+                            <label for="property">Select Property</label>
+                            <select id="property" name="property" required>
+                                <option value="">Select Property</option>
+                                <option value="aura-24">Aura 24</option>
+                                <option value="aura-36">Aura 36</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="room-type">Interested In</label>
+                        <div class="form-group" id="room-type-group" style="display:none;">
+                            <label for="room-type">Select Room Type</label>
                             <select id="room-type" name="room-type">
                                 <option value="">Select Room Type</option>
-                                <option value="single-nonac">Single Room - Non A/C</option>
-                                <option value="single-ac">Single Room - A/C</option>
-                                <option value="twin-nonac">Twin Sharing - Non A/C</option>
-                                <option value="twin-ac">Twin Sharing - A/C</option>
                             </select>
                         </div>
                         <div class="form-group">

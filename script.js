@@ -189,6 +189,43 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// ===== Property & Room Type Dropdown =====
+const propertySelect = document.getElementById('property');
+const roomTypeGroup = document.getElementById('room-type-group');
+const roomTypeSelect = document.getElementById('room-type');
+
+const propertyRooms = {
+    'aura-24': [
+        { value: 'single-nonac', label: 'Single Room - Non A/C' },
+        { value: 'single-ac', label: 'Single Room - A/C' },
+        { value: 'twin-nonac', label: 'Twin Sharing - Non A/C' },
+        { value: 'twin-ac', label: 'Twin Sharing - A/C' }
+    ],
+    'aura-36': [
+        { value: 'single-nonac', label: 'Single Room - Non A/C' },
+        { value: 'single-ac', label: 'Single Room - A/C' },
+        { value: 'twin-nonac', label: 'Twin Sharing - Non A/C' },
+        { value: 'twin-ac', label: 'Twin Sharing - A/C' }
+    ]
+};
+
+propertySelect.addEventListener('change', () => {
+    const selected = propertySelect.value;
+    roomTypeSelect.innerHTML = '<option value="">Select Room Type</option>';
+
+    if (selected && propertyRooms[selected]) {
+        propertyRooms[selected].forEach(room => {
+            const option = document.createElement('option');
+            option.value = room.value;
+            option.textContent = room.label;
+            roomTypeSelect.appendChild(option);
+        });
+        roomTypeGroup.style.display = 'block';
+    } else {
+        roomTypeGroup.style.display = 'none';
+    }
+});
+
 // ===== Contact Form =====
 const contactForm = document.getElementById('contactForm');
 
@@ -198,15 +235,15 @@ contactForm.addEventListener('submit', (e) => {
     const formData = new FormData(contactForm);
     const name = formData.get('name');
     const phone = formData.get('phone');
-    const email = formData.get('email');
+    const property = formData.get('property');
     const roomType = formData.get('room-type');
     const message = formData.get('message');
 
     // Build WhatsApp message
-    let waMessage = `Hi! I'm interested in AURA 36.\n\n`;
+    let waMessage = `Hi! I'm interested in AURA Luxury PG.\n\n`;
     waMessage += `Name: ${name}\n`;
     waMessage += `Phone: ${phone}\n`;
-    if (email) waMessage += `Email: ${email}\n`;
+    if (property) waMessage += `Property: ${property === 'aura-24' ? 'Aura 24' : 'Aura 36'}\n`;
     if (roomType) waMessage += `Room Type: ${roomType}\n`;
     if (message) waMessage += `Message: ${message}\n`;
 
