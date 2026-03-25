@@ -243,7 +243,7 @@ contactForm.addEventListener('submit', (e) => {
     let waMessage = `Hi! I'm interested in AURA Luxury PG.\n\n`;
     waMessage += `Name: ${name}\n`;
     waMessage += `Phone: ${phone}\n`;
-    if (property) waMessage += `Property: ${property === 'aura-24' ? 'Aura 24' : 'Aura 36'}\n`;
+    if (property) waMessage += `Property: ${property === 'aura-24' ? 'Aura 24' : 'Aura Luxury'}\n`;
     if (roomType) waMessage += `Room Type: ${roomType}\n`;
     if (message) waMessage += `Message: ${message}\n`;
 
