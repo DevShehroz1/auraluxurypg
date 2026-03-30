@@ -131,6 +131,28 @@ tabBtns.forEach(btn => {
     });
 });
 
+// ===== Property Tabs (Rooms Section) =====
+const propertyTabs = document.querySelectorAll('.property-tab');
+const propertyRoomSections = document.querySelectorAll('.property-rooms');
+
+propertyTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const property = tab.getAttribute('data-property');
+        const targetRooms = document.getElementById(`rooms-${property}`);
+        const isActive = tab.classList.contains('active');
+
+        // Close all
+        propertyTabs.forEach(t => t.classList.remove('active'));
+        propertyRoomSections.forEach(s => s.classList.remove('active'));
+
+        // Toggle clicked
+        if (!isActive) {
+            tab.classList.add('active');
+            targetRooms.classList.add('active');
+        }
+    });
+});
+
 // ===== FAQ Accordion =====
 const faqItems = document.querySelectorAll('.faq-item');
 
