@@ -169,15 +169,16 @@ ul {
 }
 
 .preloader-logo {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: 12px;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.preloader-logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    filter: brightness(1.1);
 }
 
 .preloader-bar {
@@ -230,9 +231,25 @@ ul {
 
 .nav-logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 2px;
+    line-height: 0;
+}
+
+.nav-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+    filter: brightness(1.05);
+    transition: opacity 0.25s ease;
+}
+
+.nav-logo:hover img {
+    opacity: 0.85;
+}
+
+#navbar:not(.scrolled) .nav-logo img {
+    /* On dark transparent navbar, keep the logo visible — slight brightness boost already */
 }
 
 .logo-text {
@@ -1953,10 +1970,17 @@ ul {
 }
 
 .footer-logo {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
+    display: inline-flex;
+    align-items: center;
     margin-bottom: 16px;
+    line-height: 0;
+}
+
+.footer-logo img {
+    height: 64px;
+    width: auto;
+    display: block;
+    filter: brightness(1.1);
 }
 
 .footer-brand p {
