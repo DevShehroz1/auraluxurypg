@@ -237,11 +237,15 @@ ul {
 }
 
 .nav-logo img {
-    height: 82px;
+    height: 120px;
     width: auto;
     display: block;
-    filter: brightness(1.05);
+    filter: brightness(1.25) contrast(1.1) drop-shadow(0 2px 12px rgba(0, 0, 0, 0.45));
     transition: opacity 0.25s ease;
+}
+
+#navbar.scrolled .nav-logo img {
+    height: 90px;
 }
 
 .nav-logo:hover img {
