@@ -912,38 +912,63 @@ ul {
     aspect-ratio: 16/10;
 }
 
+.gallery-item .img-placeholder {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.gallery-item .img-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 15, 30, 0.05) 0%, rgba(10, 15, 30, 0.35) 55%, rgba(10, 15, 30, 0.75) 100%);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.gallery-item .img-placeholder i,
+.gallery-item .img-placeholder span {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.gallery-item:hover .img-placeholder::after {
+    opacity: 0.35;
+}
+
 .img-gallery-1 {
-    background: linear-gradient(135deg, #2A2A2A, #1A1A1A);
+    background-image: url('images/aura-36/wb2.webp');
     aspect-ratio: auto;
     height: 100%;
 }
 
 .img-gallery-2 {
-    background: linear-gradient(135deg, #D4AF37, #B8952F);
+    background-image: url('images/aura-36/wb17.webp');
     aspect-ratio: auto;
     height: 100%;
 }
 
 .img-gallery-3 {
-    background: linear-gradient(135deg, #333333, #2A2A2A);
+    background-image: url('images/aura-36/wb7.webp');
     aspect-ratio: auto;
     height: 100%;
 }
 
 .img-gallery-4 {
-    background: linear-gradient(135deg, #1A1A1A, #2A2A2A);
+    background-image: url('images/aura-36/wb12.webp');
     aspect-ratio: auto;
     height: 100%;
 }
 
 .img-gallery-5 {
-    background: linear-gradient(135deg, #B8952F, #D4AF37);
+    background-image: url('images/aura-36/wb9.webp');
     aspect-ratio: auto;
     height: 100%;
 }
 
 .img-gallery-6 {
-    background: linear-gradient(135deg, #0F0F0F, #1A1A1A);
+    background-image: url('images/aura-36/wb18.webp');
     aspect-ratio: auto;
     height: 100%;
 }
