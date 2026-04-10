@@ -1370,8 +1370,14 @@ ul {
 
 /* ===== Community Section ===== */
 .community {
-    background: var(--off-white);
+    background: var(--off-white) url('https://cdn.shopify.com/s/files/1/0653/3372/3209/files/2000_x_800_px-2.png?v=1775801685') center/cover no-repeat;
     position: relative;
+}
+
+@media (max-width: 768px) {
+    .community {
+        background-image: url('https://cdn.shopify.com/s/files/1/0653/3372/3209/files/1080_x_1450_px.png?v=1775801684');
+    }
 }
 
 .community::before {
