@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA 24 — Rooms | AURA Luxury</title>
+    <meta name="description" content="Explore AURA 24 room options: Single Sharing, Standard Two Sharing, and Premium Two Sharing. Premium ladies PG in Sanjaynagar, Bengaluru.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="aura36-page">
+
+    <!-- Floating Nav -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">AURA</span>
+                <span class="logo-sub">LUXURY STAYS</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#amenities">Amenities</a></li>
+                <li><a href="index.html#rooms">Rooms</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#community">Life @ Aura</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Book a Visit</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="aura36-header">
+        <div class="aura36-header-bg">
+            <img src="images/aura-24/exterior.png" alt="" loading="eager">
+        </div>
+        <div class="aura36-header-overlay"></div>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>AURA 24</span>
+            </nav>
+            <div class="aura36-header-inner">
+                <span class="aura36-eyebrow">Premium Ladies PG · Sanjaynagar</span>
+                <h1 class="aura36-title">
+                    <span class="aura36-title-word">AURA</span>
+                    <span class="aura36-title-num">24</span>
+                </h1>
+                <p class="aura36-lead">Our flagship property — a curated collection of luxury rooms designed for women who expect more from their stay.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Listings -->
+    <section class="section aura36-listings">
+        <div class="container">
+            <div class="rooms-grid">
+                <div class="room-card aura36-room" data-room="single">
+                    <div class="room-image">
+                        <img src="images/aura-24/single.png" alt="Single Sharing Room at AURA 24" loading="lazy">
+                        <div class="room-badge">Popular</div>
+                        <div class="room-view-overlay"><i class="fas fa-expand"></i><span>Quick View</span></div>
+                    </div>
+                    <div class="room-content">
+                        <div class="room-type">Single Sharing</div>
+                        <h3>Single Sharing</h3>
+                        <button type="button" class="btn btn-primary btn-room btn-quickview" data-room="single">
+                            <span>Quick View</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="room-card aura36-room" data-room="standard">
+                    <div class="room-image">
+                        <img src="images/aura-24/double-sharing.png" alt="Standard Two Sharing Room at AURA 24" loading="lazy">
+                        <div class="room-badge">Value</div>
+                        <div class="room-view-overlay"><i class="fas fa-expand"></i><span>Quick View</span></div>
+                    </div>
+                    <div class="room-content">
+                        <div class="room-type">Standard Two Sharing</div>
+                        <h3>Standard Two Sharing</h3>
+                        <button type="button" class="btn btn-primary btn-room btn-quickview" data-room="standard">
+                            <span>Quick View</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="room-card featured aura36-room" data-room="premium">
+                    <div class="room-image">
+                        <img src="images/aura-24/double-sharing.png" alt="Premium Two Sharing Room at AURA 24" loading="lazy">
+                        <div class="room-badge premium">Premium</div>
+                        <div class="room-view-overlay"><i class="fas fa-expand"></i><span>Quick View</span></div>
+                    </div>
+                    <div class="room-content">
+                        <div class="room-type">Premium Two Sharing</div>
+                        <h3>Premium Two Sharing</h3>
+                        <button type="button" class="btn btn-primary btn-room btn-quickview" data-room="premium">
+                            <span>Quick View</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quickview Modal -->
+    <div class="quickview" id="quickview" aria-hidden="true">
+        <div class="quickview-backdrop"></div>
+        <div class="quickview-dialog" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+            <button class="quickview-close" id="qvClose" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div class="quickview-body">
+                <div class="quickview-media">
+                    <div class="qv-stage">
+                        <button class="qv-nav prev" id="qvPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                        <img class="qv-main" id="qvMain" src="" alt="">
+                        <button class="qv-nav next" id="qvNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                        <span class="qv-counter" id="qvCounter">1 / 1</span>
+                    </div>
+                    <div class="qv-thumbs" id="qvThumbs"></div>
+                </div>
+                <aside class="quickview-details">
+                    <span class="qv-tag" id="qvTag">Room</span>
+                    <h2 id="qvTitle">Room</h2>
+                    <p class="qv-desc" id="qvDesc"></p>
+
+                    <div class="qv-specs" id="qvSpecs"></div>
+
+                    <h4 class="qv-features-title">What's Included</h4>
+                    <ul class="qv-features" id="qvFeatures"></ul>
+
+                    <div class="qv-cta">
+                        <a href="index.html#contact" class="btn btn-primary btn-glow">
+                            <span>Enquire Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/917899746567" target="_blank" rel="noopener" class="btn btn-outline">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917899746567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="aura-24.js"></script>
+</body>
+</html>
