@@ -2362,6 +2362,416 @@ ul {
     }
 }
 
+/* ===== Property Link (Aura 36 redirect tab) ===== */
+a.property-tab.property-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.property-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 22px;
+    background: var(--gold-light, #d4af37);
+    color: #0a0f1e;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+a.property-tab.property-link:hover .property-view-btn {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(212, 175, 55, 0.35);
+}
+
+/* ===== AURA 36 Page ===== */
+.aura36-page { background: var(--off-white, #fafafa); }
+.aura36-header {
+    padding: 140px 24px 60px;
+    background: linear-gradient(135deg, #0a0f1e 0%, #141b30 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.aura36-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.18), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.08), transparent 50%);
+    pointer-events: none;
+}
+.aura36-header .container { position: relative; z-index: 2; }
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 30px;
+}
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.breadcrumb a:hover { color: var(--gold-light, #d4af37); }
+.breadcrumb i { font-size: 0.65rem; opacity: 0.5; }
+.aura36-header-inner { max-width: 720px; }
+.aura36-header-inner .section-tag {
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50px;
+    color: var(--gold-light, #d4af37);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.aura36-header-inner h1 {
+    font-family: var(--font-display, 'Bodoni Moda', serif);
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+    line-height: 1.1;
+}
+.aura36-header-inner p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 560px;
+}
+.aura36-listings {
+    padding: 80px 24px;
+    background: var(--off-white, #fafafa);
+}
+.aura36-listings .rooms-grid { margin-top: 0; }
+
+/* ===== Quickview Modal ===== */
+.quickview {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.quickview.open { display: flex; }
+.quickview-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 8, 18, 0.88);
+    backdrop-filter: blur(6px);
+    animation: qvFade 0.25s ease;
+}
+.quickview-dialog {
+    position: relative;
+    width: min(1200px, 96vw);
+    max-height: 94vh;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+    animation: qvPop 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+@keyframes qvFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes qvPop {
+    from { opacity: 0; transform: scale(0.96) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.quickview-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(10, 15, 30, 0.85);
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.quickview-close:hover {
+    background: #0a0f1e;
+    transform: rotate(90deg);
+}
+.quickview-body {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    min-height: 0;
+    overflow: hidden;
+}
+.quickview-media {
+    background: #0a0f1e;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+}
+.qv-stage {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    background: #0a0f1e;
+    overflow: hidden;
+}
+.qv-main {
+    max-width: 100%;
+    max-height: 68vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+    display: block;
+}
+.qv-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 15, 30, 0.65);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+.qv-nav.prev { left: 14px; }
+.qv-nav.next { right: 14px; }
+.qv-nav:hover { background: var(--gold-light, #d4af37); color: #0a0f1e; }
+.qv-counter {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    padding: 6px 12px;
+    background: rgba(10, 15, 30, 0.75);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.5px;
+}
+.qv-thumbs {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    background: #0f1528;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+.qv-thumbs::-webkit-scrollbar { height: 6px; }
+.qv-thumbs::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.25); border-radius: 3px; }
+.qv-thumb {
+    flex: 0 0 auto;
+    width: 84px;
+    height: 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0;
+    background: #000;
+    opacity: 0.55;
+    transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.qv-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.qv-thumb:hover { opacity: 0.85; }
+.qv-thumb.active {
+    opacity: 1;
+    border-color: var(--gold-light, #d4af37);
+    transform: translateY(-2px);
+}
+.quickview-details {
+    padding: 40px 36px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #fff;
+}
+.quickview-details::-webkit-scrollbar { width: 6px; }
+.quickview-details::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.18); border-radius: 3px; }
+.qv-tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 5px 14px;
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--gold-dark, #a8871e);
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.quickview-details h2 {
+    font-family: var(--font-display, 'Bodoni Moda', serif);
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    font-weight: 500;
+    color: #0a0f1e;
+    margin: 0;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+.qv-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4a4f5c;
+    margin: 0;
+}
+.qv-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.qv-spec {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.qv-spec i {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--gold-dark, #a8871e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex: 0 0 auto;
+}
+.qv-spec-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8a8f9c;
+    margin-bottom: 2px;
+}
+.qv-spec strong {
+    font-size: 0.9rem;
+    color: #0a0f1e;
+    font-weight: 600;
+}
+.qv-features-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8a8f9c;
+    margin: 4px 0 0;
+    font-weight: 600;
+}
+.qv-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+}
+.qv-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: #2c3142;
+    line-height: 1.4;
+}
+.qv-features li i {
+    color: var(--gold-dark, #a8871e);
+    font-size: 0.75rem;
+}
+.qv-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+.qv-cta .btn-outline {
+    background: transparent;
+    color: #0a0f1e;
+    border: 1.5px solid rgba(10, 15, 30, 0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+}
+.qv-cta .btn-outline:hover {
+    border-color: #25d366;
+    color: #25d366;
+    transform: translateY(-2px);
+}
+body.quickview-open { overflow: hidden; }
+
+@media (max-width: 900px) {
+    .quickview-body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        max-height: 94vh;
+    }
+    .quickview-dialog { max-height: 94vh; }
+    .qv-main { max-height: 45vh; }
+    .quickview-details { padding: 28px 22px; }
+    .qv-features { grid-template-columns: 1fr; }
+    .qv-specs { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+    .quickview { padding: 0; }
+    .quickview-dialog {
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+    .qv-main { max-height: 38vh; }
+    .qv-nav { width: 38px; height: 38px; }
+    .qv-specs { grid-template-columns: 1fr; }
+    .qv-thumb { width: 68px; height: 50px; }
+    .quickview-details h2 { font-size: 1.5rem; }
+}
+
 /* ===== Room Card Gallery Hover Overlay ===== */
 .aura36-room { cursor: pointer; }
 .aura36-room .room-image { position: relative; }
