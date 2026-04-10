@@ -307,3 +307,95 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         slides[current].classList.add('active');
     }, 5000);
 })();
+
+// ===== Room Gallery Lightbox =====
+(() => {
+    const lightbox = document.getElementById('galleryLightbox');
+    if (!lightbox) return;
+    const mainImg = document.getElementById('galleryMain');
+    const titleEl = document.getElementById('galleryTitle');
+    const counterEl = document.getElementById('galleryCounter');
+    const thumbsEl = document.getElementById('galleryThumbs');
+    const closeBtn = document.getElementById('galleryClose');
+    const prevBtn = document.getElementById('galleryPrev');
+    const nextBtn = document.getElementById('galleryNext');
+    const backdrop = lightbox.querySelector('.gallery-backdrop');
+
+    let images = [];
+    let index = 0;
+
+    function render() {
+        if (!images.length) return;
+        mainImg.src = images[index];
+        counterEl.textContent = `${index + 1} / ${images.length}`;
+        thumbsEl.querySelectorAll('.gallery-thumb').forEach((t, i) => {
+            t.classList.toggle('active', i === index);
+            if (i === index) t.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        });
+    }
+
+    function buildThumbs() {
+        thumbsEl.innerHTML = '';
+        images.forEach((src, i) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+            btn.innerHTML = `<img src="${src}" alt="" loading="lazy">`;
+            btn.addEventListener('click', () => { index = i; render(); });
+            thumbsEl.appendChild(btn);
+        });
+    }
+
+    function openGallery(gallery, title) {
+        images = gallery;
+        index = 0;
+        titleEl.textContent = title || 'Room Gallery';
+        buildThumbs();
+        render();
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('gallery-open');
+    }
+
+    function closeGallery() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('gallery-open');
+    }
+
+    function next() { index = (index + 1) % images.length; render(); }
+    function prev() { index = (index - 1 + images.length) % images.length; render(); }
+
+    document.querySelectorAll('.aura36-room').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a, button')) return;
+            let gallery;
+            try { gallery = JSON.parse(card.dataset.gallery || '[]'); } catch (_) { gallery = []; }
+            if (!gallery.length) return;
+            openGallery(gallery, card.dataset.title);
+        });
+    });
+
+    closeBtn.addEventListener('click', closeGallery);
+    backdrop.addEventListener('click', closeGallery);
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeGallery();
+        else if (e.key === 'ArrowRight') next();
+        else if (e.key === 'ArrowLeft') prev();
+    });
+
+    let touchStartX = null;
+    lightbox.querySelector('.gallery-stage').addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    lightbox.querySelector('.gallery-stage').addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+        touchStartX = null;
+    });
+})();

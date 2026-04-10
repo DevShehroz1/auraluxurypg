@@ -384,10 +384,11 @@
             <!-- Aura 36 Rooms -->
             <div class="property-rooms" id="rooms-aura-36">
                 <div class="rooms-grid">
-                    <div class="room-card">
+                    <div class="room-card aura36-room" data-title="Single Sharing — AURA 36" data-gallery='["images/aura-36/single.webp","images/aura-36/wb1.webp","images/aura-36/wb2.webp","images/aura-36/wb3.webp","images/aura-36/wb4.webp","images/aura-36/wb5.webp","images/aura-36/wb6.webp","images/aura-36/wb7.webp","images/aura-36/wb8.webp","images/aura-36/wb9.webp","images/aura-36/wb10.webp","images/aura-36/wb11.webp","images/aura-36/wb12.webp","images/aura-36/wb13.webp","images/aura-36/wb14.webp","images/aura-36/wb15.webp","images/aura-36/wb16.webp","images/aura-36/wb17.webp","images/aura-36/wb18.webp","images/aura-36/wb19-2.webp","images/aura-36/wb29.webp","images/aura-36/wn21.webp"]'>
                         <div class="room-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0653/3372/3209/files/Single_sharing.jpg?v=1774423797" alt="Single Sharing Room at AURA 36" loading="lazy">
+                            <img src="images/aura-36/single.webp" alt="Single Sharing Room at AURA 36" loading="lazy">
                             <div class="room-badge">Popular</div>
+                            <div class="room-view-overlay"><i class="fas fa-expand"></i><span>View Gallery</span></div>
                         </div>
                         <div class="room-content">
                             <div class="room-type">Single Sharing</div>
@@ -398,10 +399,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="room-card">
+                    <div class="room-card aura36-room" data-title="Standard Two Sharing — AURA 36" data-gallery='["images/aura-36/double-sharing-1.webp","images/aura-36/wb1.webp","images/aura-36/wb2.webp","images/aura-36/wb3.webp","images/aura-36/wb4.webp","images/aura-36/wb5.webp","images/aura-36/wb6.webp","images/aura-36/wb7.webp","images/aura-36/wb8.webp","images/aura-36/wb9.webp","images/aura-36/wb10.webp","images/aura-36/wb11.webp","images/aura-36/wb12.webp","images/aura-36/wb13.webp","images/aura-36/wb14.webp","images/aura-36/wb15.webp","images/aura-36/wb16.webp","images/aura-36/wb17.webp","images/aura-36/wb18.webp","images/aura-36/wb19-2.webp","images/aura-36/wb29.webp","images/aura-36/wn21.webp"]'>
                         <div class="room-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0653/3372/3209/files/Standard_two_sharing.jpg?v=1774423797" alt="Standard Two Sharing Room at AURA 36" loading="lazy">
+                            <img src="images/aura-36/double-sharing-1.webp" alt="Standard Two Sharing Room at AURA 36" loading="lazy">
                             <div class="room-badge">Value</div>
+                            <div class="room-view-overlay"><i class="fas fa-expand"></i><span>View Gallery</span></div>
                         </div>
                         <div class="room-content">
                             <div class="room-type">Standard Two Sharing</div>
@@ -412,10 +414,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="room-card featured">
+                    <div class="room-card featured aura36-room" data-title="Premium Two Sharing — AURA 36" data-gallery='["images/aura-36/double-sharing-2.webp","images/aura-36/wb1.webp","images/aura-36/wb2.webp","images/aura-36/wb3.webp","images/aura-36/wb4.webp","images/aura-36/wb5.webp","images/aura-36/wb6.webp","images/aura-36/wb7.webp","images/aura-36/wb8.webp","images/aura-36/wb9.webp","images/aura-36/wb10.webp","images/aura-36/wb11.webp","images/aura-36/wb12.webp","images/aura-36/wb13.webp","images/aura-36/wb14.webp","images/aura-36/wb15.webp","images/aura-36/wb16.webp","images/aura-36/wb17.webp","images/aura-36/wb18.webp","images/aura-36/wb19-2.webp","images/aura-36/wb29.webp","images/aura-36/wn21.webp"]'>
                         <div class="room-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0653/3372/3209/files/Premium_two_sharing.jpg?v=1774423797" alt="Premium Two Sharing Room at AURA 36" loading="lazy">
+                            <img src="images/aura-36/double-sharing-2.webp" alt="Premium Two Sharing Room at AURA 36" loading="lazy">
                             <div class="room-badge premium">Premium</div>
+                            <div class="room-view-overlay"><i class="fas fa-expand"></i><span>View Gallery</span></div>
                         </div>
                         <div class="room-content">
                             <div class="room-type">Premium Two Sharing</div>
@@ -955,6 +958,24 @@
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Room Gallery Lightbox -->
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+        <div class="gallery-backdrop"></div>
+        <div class="gallery-dialog" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+            <button class="gallery-close" id="galleryClose" aria-label="Close gallery"><i class="fas fa-times"></i></button>
+            <div class="gallery-header">
+                <h3 id="galleryTitle">Room Gallery</h3>
+                <span class="gallery-counter" id="galleryCounter">1 / 1</span>
+            </div>
+            <div class="gallery-stage">
+                <button class="gallery-nav prev" id="galleryPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                <img class="gallery-main" id="galleryMain" src="" alt="">
+                <button class="gallery-nav next" id="galleryNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="gallery-thumbs" id="galleryThumbs"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
