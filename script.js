@@ -296,15 +296,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Parallax subtle effect on hero =====
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero-content');
-    if (hero && window.scrollY < window.innerHeight) {
-        hero.style.transform = `translateY(${window.scrollY * 0.15}px)`;
-        hero.style.opacity = 1 - (window.scrollY / window.innerHeight) * 0.6;
-    }
-});
-
 // ===== Hero Background Slideshow =====
 (() => {
     const slides = document.querySelectorAll('.hero-slider .hero-slide');
