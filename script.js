@@ -132,30 +132,7 @@ tabBtns.forEach(btn => {
 });
 
 // ===== Property Tabs (Rooms Section) =====
-const propertyTabs = document.querySelectorAll('.property-tab');
-const propertyRoomSections = document.querySelectorAll('.property-rooms');
-
-propertyTabs.forEach(tab => {
-    // Property links (e.g., Aura 36) navigate away — skip toggle binding
-    if (tab.classList.contains('property-link')) return;
-    tab.addEventListener('click', () => {
-        const property = tab.getAttribute('data-property');
-        const targetRooms = document.getElementById(`rooms-${property}`);
-        const isActive = tab.classList.contains('active');
-
-        // Close all
-        propertyTabs.forEach(t => {
-            if (!t.classList.contains('property-link')) t.classList.remove('active');
-        });
-        propertyRoomSections.forEach(s => s.classList.remove('active'));
-
-        // Toggle clicked
-        if (!isActive) {
-            tab.classList.add('active');
-            if (targetRooms) targetRooms.classList.add('active');
-        }
-    });
-});
+// Dropdown removed — Aura 24 rooms are always visible, Aura 36 navigates to a dedicated page.
 
 // ===== FAQ Accordion =====
 const faqItems = document.querySelectorAll('.faq-item');
