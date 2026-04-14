@@ -22,11 +22,12 @@
                 'Personal wardrobe & study desk',
                 'Smart TV',
                 'In-room refrigerator',
+                'Self-cooking kitchen in every room',
                 'RFID door lock',
                 'Attached private washroom',
                 'Daily housekeeping'
             ],
-            images: ['images/aura-36/single.webp', ...baseGallery]
+            images: ['images/aura-36/single.jpeg', ...baseGallery]
         },
         standard: {
             tag: 'Value',
@@ -44,6 +45,7 @@
                 'Shared study desk',
                 'Smart TV',
                 'In-room refrigerator',
+                'Self-cooking kitchen in every room',
                 'RFID door lock',
                 'Attached private washroom',
                 'Daily housekeeping'
@@ -66,6 +68,7 @@
                 'Dedicated study workspace',
                 'Smart TV',
                 'In-room refrigerator',
+                'Self-cooking kitchen in every room',
                 'RFID door lock',
                 'Premium attached washroom',
                 'Daily housekeeping',
