@@ -1315,6 +1315,19 @@ ul {
     font-size: 0.7rem;
 }
 
+.room-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold-dark, #a8871e);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+.room-price span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--gray-500, #8a8f9c);
+}
+
 .btn-room {
     width: 100%;
     justify-content: center;
@@ -2717,6 +2730,19 @@ a.property-tab.property-link:hover .property-view-btn {
     line-height: 1.15;
     letter-spacing: -0.5px;
 }
+.qv-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold-dark, #a8871e);
+    margin: -6px 0 0;
+    line-height: 1.2;
+}
+.qv-price span {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #8a8f9c;
+}
+
 .qv-desc {
     font-size: 0.95rem;
     line-height: 1.7;
