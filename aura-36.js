@@ -10,6 +10,8 @@
         single: {
             tag: 'Popular',
             title: 'Single Sharing',
+            price: '₹25,000',
+            priceNote: 'starting / month',
             desc: 'Your own private sanctuary — a fully furnished single occupancy room with an attached washroom, ideal for focused study or peaceful downtime.',
             specs: [
                 { icon: 'fa-user', label: 'Occupancy', value: '1 Person' },
@@ -27,11 +29,13 @@
                 'Attached private washroom',
                 'Daily housekeeping'
             ],
-            images: ['images/aura-36/single.jpeg', ...baseGallery]
+            images: ['images/aura-36/single.webp', ...baseGallery]
         },
         standard: {
             tag: 'Value',
             title: 'Standard Two Sharing',
+            price: '₹16,500',
+            priceNote: '/ month per person',
             desc: 'A comfortable shared room designed for two, with individual beds, wardrobes and study space — all the essentials, thoughtfully arranged.',
             specs: [
                 { icon: 'fa-user-friends', label: 'Occupancy', value: '2 Persons' },
@@ -55,6 +59,8 @@
         premium: {
             tag: 'Premium',
             title: 'Premium Two Sharing',
+            price: '₹17,500',
+            priceNote: '/ month per person',
             desc: 'An elevated shared experience with premium finishes, more space, and upgraded furnishings — luxury that feels like home.',
             specs: [
                 { icon: 'fa-user-friends', label: 'Occupancy', value: '2 Persons' },
@@ -113,6 +119,10 @@
 
         qvTag.textContent = room.tag;
         qvTitle.textContent = room.title;
+        const qvPrice = document.getElementById('qvPrice');
+        if (qvPrice) {
+            qvPrice.innerHTML = `${room.price} <span>${room.priceNote}</span>`;
+        }
         qvDesc.textContent = room.desc;
 
         qvSpecs.innerHTML = room.specs.map(s => `
