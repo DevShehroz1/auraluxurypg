@@ -1,7 +1,7 @@
 // ===== AURA 24 Quickview =====
 (() => {
     const baseGallery = [
-        'exterior.png', 'corridor.png', 'stairs.png'
+        'cupboard.png', 'kitchen.png', 'bathroom.png'
     ].map(f => `images/aura-24/${f}`);
 
     const rooms = {
@@ -24,7 +24,7 @@
                 'Attached private washroom',
                 'Daily housekeeping'
             ],
-            images: ['https://cdn.shopify.com/s/files/1/0576/1371/3486/files/Single_sharing_1.jpg?v=1777453225', ...baseGallery]
+            images: ['images/aura-24/single.png', ...baseGallery]
         },
         standard: {
             tag: 'Value',
@@ -46,7 +46,7 @@
                 'Attached private washroom',
                 'Daily housekeeping'
             ],
-            images: ['images/aura-24/double-sharing.png', ...baseGallery]
+            images: ['images/aura-24/standard.png', ...baseGallery]
         },
         premium: {
             tag: 'Premium',
@@ -69,7 +69,7 @@
                 'Daily housekeeping',
                 'Priority maintenance support'
             ],
-            images: ['images/aura-24/double-sharing.png', ...baseGallery]
+            images: ['images/aura-24/premium.png', ...baseGallery]
         }
     };
 
