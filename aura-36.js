@@ -29,7 +29,7 @@
                 'Attached private washroom',
                 'Daily housekeeping'
             ],
-            images: ['images/aura-36/single-sharing.png', ...baseGallery]
+            images: ['images/aura-36/single-sharing.jpg', ...baseGallery]
         },
         standard: {
             tag: 'Value',
@@ -54,7 +54,7 @@
                 'Attached private washroom',
                 'Daily housekeeping'
             ],
-            images: ['images/aura-36/standard-two-sharing.png', ...baseGallery]
+            images: ['images/aura-36/standard-two-sharing.jpg', ...baseGallery]
         },
         premium: {
             tag: 'Premium',
@@ -80,7 +80,7 @@
                 'Daily housekeeping',
                 'Priority maintenance support'
             ],
-            images: ['images/aura-36/premium-two-sharing.png', ...baseGallery]
+            images: ['images/aura-36/premium-two-sharing.jpg', ...baseGallery]
         }
     };
 
