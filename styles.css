@@ -195,7 +195,7 @@ ul {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 12px 0;
+    padding: 6px 0;
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
@@ -203,7 +203,7 @@ ul {
 }
 
 #navbar.scrolled {
-    padding: 8px 0;
+    padding: 4px 0;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
@@ -226,14 +226,14 @@ ul {
 }
 
 .nav-logo img {
-    height: 90px;
+    height: 52px;
     width: auto;
     display: block;
     transition: opacity 0.25s ease;
 }
 
 #navbar.scrolled .nav-logo img {
-    height: 72px;
+    height: 44px;
 }
 
 .nav-logo:hover img {
@@ -426,16 +426,16 @@ ul {
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     background: rgba(212, 175, 55, 0.08);
     border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 50px;
-    padding: 10px 28px;
-    margin-bottom: 36px;
-    font-size: 0.78rem;
+    padding: 5px 18px;
+    margin-bottom: 24px;
+    font-size: 0.68rem;
     font-weight: 600;
     color: var(--gold-light);
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     backdrop-filter: blur(10px);
     position: relative;
@@ -2347,8 +2347,8 @@ ul {
 
 @media (max-width: 480px) {
     .hero-badge {
-        font-size: 0.65rem;
-        padding: 6px 16px;
+        font-size: 0.6rem;
+        padding: 4px 14px;
         letter-spacing: 1px;
     }
 
