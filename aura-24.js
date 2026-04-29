@@ -1,7 +1,7 @@
 // ===== AURA 24 Quickview =====
 (() => {
     const baseGallery = [
-        'cupboard.png', 'kitchen.png', 'bathroom.png'
+        'cupboard.png', 'bathroom.png'
     ].map(f => `images/aura-24/${f}`);
 
     const rooms = {
