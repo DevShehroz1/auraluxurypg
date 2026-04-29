@@ -29,7 +29,7 @@
                 'Attached private washroom',
                 'Daily housekeeping'
             ],
-            images: ['images/aura-36/single.webp', ...baseGallery]
+            images: ['images/aura-36/single.png', ...baseGallery]
         },
         standard: {
             tag: 'Value',
