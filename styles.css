@@ -226,14 +226,14 @@ ul {
 }
 
 .nav-logo img {
-    height: 52px;
+    height: 64px;
     width: auto;
     display: block;
     transition: opacity 0.25s ease;
 }
 
 #navbar.scrolled .nav-logo img {
-    height: 44px;
+    height: 54px;
 }
 
 .nav-logo:hover img {
