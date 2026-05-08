@@ -42,6 +42,7 @@
                 'Shared study desk',
                 'Smart TV',
                 'In-room refrigerator',
+                'Self-cooking kitchen in every room',
                 'RFID door lock',
                 'Attached private washroom',
                 'Daily housekeeping'

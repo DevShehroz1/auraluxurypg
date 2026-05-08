@@ -24,7 +24,6 @@
                 'Personal wardrobe & study desk',
                 'Smart TV',
                 'In-room refrigerator',
-                'Self-cooking kitchen in every room',
                 'RFID door lock',
                 'Attached private washroom',
                 'Daily housekeeping'
@@ -49,7 +48,6 @@
                 'Shared study desk',
                 'Smart TV',
                 'In-room refrigerator',
-                'Self-cooking kitchen in every room',
                 'RFID door lock',
                 'Attached private washroom',
                 'Daily housekeeping'
@@ -74,7 +72,6 @@
                 'Dedicated study workspace',
                 'Smart TV',
                 'In-room refrigerator',
-                'Self-cooking kitchen in every room',
                 'RFID door lock',
                 'Premium attached washroom',
                 'Daily housekeeping',
