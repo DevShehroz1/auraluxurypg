@@ -951,7 +951,7 @@ ul {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(10, 15, 30, 0.05) 0%, rgba(10, 15, 30, 0.35) 55%, rgba(10, 15, 30, 0.75) 100%);
+    background: linear-gradient(180deg, rgba(10, 15, 30, 0.25) 0%, rgba(10, 15, 30, 0.5) 55%, rgba(10, 15, 30, 0.75) 100%);
     transition: opacity 0.4s ease;
     pointer-events: none;
 }
@@ -960,7 +960,7 @@ ul {
     position: relative;
     z-index: 1;
     color: #fff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 0, 0, 0.5);
 }
 .gallery-item:hover .img-placeholder::after {
     opacity: 0.35;
